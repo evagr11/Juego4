@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 054766b3694451645a74d83df958ac9f, type: 3}
+  m_Name: Rocket
+  m_EditorClassIdentifier: 
+  groundAcceleration: 40
+  maxGroundHorizontalSpeed: 60
+  groundHorizontalFriction: 2
+  onAirJumps: 1
+  jumpStrength: 15
+  maxJumpTime: 0.25
+  airAcceleration: 20
+  maxAirHorizontalSpeed: 50
+  yVelocityLowGravityThreshold: 4
+  maxFallSpeed: 25
+  airFriccion: 0.2
+  risingtGravity: 3
+  peakGravity: 6
+  fallingGravity: 10

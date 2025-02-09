@@ -80,7 +80,7 @@ public class Movement : MonoBehaviour
             mainModule.startColor = groundColor;
         }
 
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             if (isOnGround || jumpCount <= stats.onAirJumps)
             {
@@ -133,14 +133,14 @@ public class Movement : MonoBehaviour
     {
         if (isOnGround)
         {
-            // Si la velocidad horizontal está dentro del límite, aumenta la velocidad con la aceleración del suelo
+            // Si la velocidad horizontal estÃ¡ dentro del lÃ­mite, aumenta la velocidad con la aceleraciÃ³n del suelo
             if (rb.velocity.x < stats.maxGroundHorizontalSpeed && rb.velocity.x > -stats.maxGroundHorizontalSpeed)
             {
                 rb.velocity = new Vector2(rb.velocity.x + (direction.x * stats.groundAcceleration * Time.deltaTime), rb.velocity.y);
             }
             else
             {
-                // Si supera la velocidad máxima, se restringe al máximo permitido
+                // Si supera la velocidad mÃ¡xima, se restringe al mÃ¡ximo permitido
                 if (rb.velocity.x > stats.maxGroundHorizontalSpeed)
                     rb.velocity = new Vector2(stats.maxGroundHorizontalSpeed, rb.velocity.y);
                 else if (rb.velocity.x < -stats.maxGroundHorizontalSpeed)
@@ -149,14 +149,14 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            // Si la velocidad horizontal está dentro del límite, aplica la aceleración para moverse en el aire
+            // Si la velocidad horizontal estÃ¡ dentro del lÃ­mite, aplica la aceleraciÃ³n para moverse en el aire
             if (rb.velocity.x < stats.maxAirHorizontalSpeed && rb.velocity.x > -stats.maxAirHorizontalSpeed)
             {
                 rb.velocity = new Vector2(rb.velocity.x + (direction.x * stats.airAcceleration * Time.deltaTime), rb.velocity.y);
             }
             else
             {
-                // Si la velocidad supera el máximo, se restringe
+                // Si la velocidad supera el mÃ¡ximo, se restringe
                 if (rb.velocity.x > stats.maxAirHorizontalSpeed)
                     rb.velocity = new Vector2(stats.maxAirHorizontalSpeed, rb.velocity.y);
                 else if (rb.velocity.x < -stats.maxAirHorizontalSpeed)
@@ -172,7 +172,7 @@ public class Movement : MonoBehaviour
 
         if (isOnGround)
         {
-            // Si el personaje se mueve a la derecha, reduce la velocidad aplicando la fricción del suelo
+            // Si el personaje se mueve a la derecha, reduce la velocidad aplicando la fricciÃ³n del suelo
             if (rb.velocity.x > 0)
                 rb.velocity = new Vector2(rb.velocity.x - stats.groundHorizontalFriction * Time.deltaTime, rb.velocity.y);
             // Idem para la izquierda
